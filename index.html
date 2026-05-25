@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andrea Bolognino — Portfolio</title>
+  <meta name="description" content="Andrea Bolognino — visual artist portfolio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top">Andrea Bolognino</a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#statement">Statement</a>
+      <a href="#projects">Projects</a>
+      <a href="portfolio.pdf" target="_blank" rel="noreferrer">PDF</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Intro">
+      <div class="hero-copy">
+        <p class="eyebrow">Portfolio</p>
+        <h1>Andrea<br>Bolognino</h1>
+        <p class="lead">Visual artist. Drawing, painting, installation, video, matter and landscape as open systems.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">Explore projects</a>
+          <a class="button" href="portfolio.pdf" target="_blank" rel="noreferrer">Download PDF</a>
+        </div>
+      </div>
+      <a class="hero-image" href="#projects" aria-label="Open projects">
+        <img src="assets/images/p36.jpg" alt="Installation view from the portfolio" />
+      </a>
+    </section>
+
+    <section class="section statement" id="statement">
+      <div class="section-kicker">Statement</div>
+      <div class="statement-text" id="statementText"></div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="section-title-row">
+        <div>
+          <div class="section-kicker">Projects</div>
+          <h2>Index</h2>
+        </div>
+        <p class="hint">Click a project to open its text and images.</p>
+      </div>
+      <div class="project-grid" id="projectGrid"></div>
+    </section>
+
+    <section class="project-detail" id="projectDetail" aria-live="polite"></section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="close" type="button" aria-label="Close image">×</button>
+    <img alt="Expanded portfolio page" />
+  </div>
+
+  <footer class="footer">
+    <a href="#top">Back to top</a>
+    <a href="portfolio.pdf" target="_blank" rel="noreferrer">Portfolio PDF</a>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

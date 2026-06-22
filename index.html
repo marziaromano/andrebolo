@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrea Bolognino — Portfolio</title>
+  <meta name="description" content="Andrea Bolognino — visual artist. Painting, drawing, sculpture, installation and video on memory, matter and landscape." />
+  <meta property="og:title" content="Andrea Bolognino — Portfolio" />
+  <meta property="og:description" content="Visual artist. Painting, drawing, sculpture, installation and video." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.andreabolognino.com/" />
+  <link rel="preconnect" href="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="#top">Andrea&nbsp;Bolognino</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
+    <nav class="site-nav">
+      <a href="#statement">Statement</a>
+      <a href="#works">Works</a>
+      <a href="portfolio.pdf" target="_blank" rel="noopener">Portfolio&nbsp;PDF</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="hero-title">Andrea Bolognino</h1>
+      <p class="hero-sub">Portfolio</p>
+    </section>
+
+    <section id="statement" class="statement">
+      <h2 class="section-label">Statement</h2>
+      <div class="statement-body" id="statement-body"></div>
+    </section>
+
+    <nav id="index" class="project-index" aria-label="Works index"></nav>
+
+    <section id="works" class="works"></section>
+
+    <section id="contact" class="contact">
+      <h2 class="section-label">Contact</h2>
+      <p id="contact-body"></p>
+      <p class="contact-pdf"><a href="portfolio.pdf" target="_blank" rel="noopener">Download full portfolio (PDF)</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span id="footer-name">Andrea Bolognino</span>
+    <span id="footer-domain"></span>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lb-close" aria-label="Close">×</button>
+    <button class="lb-prev" aria-label="Previous">‹</button>
+    <button class="lb-next" aria-label="Next">›</button>
+    <figure class="lb-figure">
+      <img class="lb-img" src="" alt="" />
+      <figcaption class="lb-caption"></figcaption>
+    </figure>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

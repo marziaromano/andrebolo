@@ -10,29 +10,50 @@ verbatim from the artist's portfolio PDF.
 
 ```
 .
-├── assets/images/   # artwork images extracted from the portfolio
-├── CNAME            # custom domain for GitHub Pages (www.andreabolognino.com)
+├── assets/images/       # artwork images (also where uploads from the panel land)
+├── content/
+│   ├── sito.json        # site name, statement, contact info
+│   └── progetti.json    # every exhibition/project + its works, newest first
+├── .pages.yml           # Pages CMS config (powers the editing panel)
+├── CNAME                # custom domain for GitHub Pages (www.andreabolognino.com)
 ├── README.md
-├── data.js          # ← single source of truth: all texts and works
-├── index.html       # page markup
-├── portfolio.pdf    # downloadable full portfolio
-├── script.js        # renders data.js into the page + lightbox
-├── style.css        # styling
-└── .nojekyll        # tell GitHub Pages to serve files as-is
+├── index.html           # page markup
+├── portfolio.pdf        # downloadable full portfolio
+├── script.js            # renders content/*.json into the page + lightbox
+├── style.css            # styling
+└── .nojekyll             # tell GitHub Pages to serve files as-is
 ```
 
 ## Editing content
 
-Everything you read on the site lives in **`data.js`** — edit that file, no HTML needed.
+The easiest way is the **editing panel** (Pages CMS) — see "Content panel" below;
+no code, no GitHub website needed.
 
-- `SITE.statement` — the artist statement.
-- `SITE.email` — empty by default; add an email to show it in the Contact section.
-- `PROJECTS` — array of projects, newest first. Each has a title, year, venue,
-  optional curator/credits, a summary, and a list of `works`
-  (`{ src, title, medium }`).
+If editing by hand instead: everything lives in the two JSON files in `content/`.
 
-To add an image: drop the file in `assets/images/` and reference it with
-`img("filename.jpg")` inside the relevant project's `works` array.
+- `content/sito.json` — `statement` (artist bio), `email` (leave `""` to hide the
+  contact line), `name`, `domain`.
+- `content/progetti.json` — array of projects, newest first. Each has a `title`,
+  `year`, optional `subtitle`/`venue`/`curator`/`credits`, a `summary`, and a list
+  of `works` (`{ image, title, medium }`). `image` is the path to a file in
+  `assets/images/`. The page anchor/URL for each project is generated
+  automatically from its title, so there's no id to manage by hand.
+
+## Content panel (Pages CMS)
+
+This repo is set up for [Pages CMS](https://pagescms.org), a free web panel that
+lets anyone add/edit projects and upload images without touching code or GitHub
+directly — same tool used on the tumugaogao.com site.
+
+1. Whoever owns the GitHub repo signs in at https://app.pagescms.org with GitHub
+   and selects this repository. `.pages.yml` is picked up automatically.
+2. To give the artist (or anyone without a GitHub account) access: inside Pages
+   CMS, open **Collaborators** for this repo and invite them by email. They'll
+   get a link to sign in and edit — no GitHub account required.
+3. In the panel: **"Mostre / Progetti"** = add/edit/reorder exhibitions and their
+   images; **"Impostazioni sito"** = statement and contact info. Every save is
+   committed straight to GitHub, and the live site updates within a couple of
+   minutes.
 
 ## Local preview
 

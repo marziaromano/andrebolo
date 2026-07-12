@@ -377,5 +377,14 @@ figure.work figcaption .wt { color: var(--ink); font-style: italic; }
     padding: 0.7rem clamp(2rem, 8vw, 4rem);
   }
   .submenu a .yr { font-size: 0.72rem; }
+  /* Neutralize the desktop centering transform (translateX(-50%)) that
+     .has-sub:hover/.focus-within/.submenu.open apply — on mobile the
+     submenu is full-width, so that same transform pushed it half its
+     own width off-screen to the left, cropping every title. */
+  .has-sub:hover .submenu,
+  .has-sub:focus-within .submenu,
+  .submenu.open {
+    transform: none;
+  }
   .gallery { grid-template-columns: 1fr; }
 }

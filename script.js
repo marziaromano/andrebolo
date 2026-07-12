@@ -123,14 +123,12 @@
   const worksLink = $(".works-link", nav);
   const isMobile = () => window.matchMedia("(max-width: 680px)").matches;
 
-  // On mobile, tapping "Works" expands the submenu instead of jumping the page.
+  // On mobile, tapping "Works" toggles the submenu instead of jumping the page.
   worksLink.addEventListener("click", (e) => {
     if (!isMobile()) return;
-    if (!submenu.classList.contains("open")) {
-      e.preventDefault();
-      submenu.classList.add("open");
-      worksLink.setAttribute("aria-expanded", "true");
-    }
+    e.preventDefault();
+    const isOpen = submenu.classList.toggle("open");
+    worksLink.setAttribute("aria-expanded", String(isOpen));
   });
 
   nav.addEventListener("click", (e) => {

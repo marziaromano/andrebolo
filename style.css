@@ -345,7 +345,7 @@ figure.work figcaption .wt { color: var(--ink); font-style: italic; }
   }
   .site-nav.open { max-height: 90vh; overflow-y: auto; }
   .site-nav > a,
-  .has-sub > .works-link { padding: 0.9rem clamp(1rem, 4vw, 3rem); border-top: 1px solid var(--line); }
+  .has-sub > .works-link { padding: 0.9rem clamp(1rem, 4vw, 3rem); border-top: 1px solid var(--line); display: block; }
   .has-sub { position: static; }
   /* submenu becomes a static, indented inline list on mobile */
   .submenu,

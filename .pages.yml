@@ -1,0 +1,84 @@
+media:
+  input: assets/images
+  output: assets/images
+
+content:
+  - name: sito
+    label: "Impostazioni sito"
+    type: file
+    path: content/sito.json
+    fields:
+      - name: name
+        label: "Nome"
+        type: string
+      - name: role
+        label: "Sottotitolo (es. Portfolio)"
+        type: string
+      - name: domain
+        label: "Dominio"
+        type: string
+      - name: email
+        label: "Email di contatto"
+        type: string
+        required: false
+      - name: statement
+        label: "Statement / bio"
+        type: text
+        description: "Per andare a capo tra un paragrafo e l'altro, lascia una riga vuota."
+
+  - name: progetti
+    label: "Mostre / Progetti"
+    type: file
+    path: content/progetti.json
+    format: json
+    list: true
+    view:
+      fields: [title, year]
+    fields:
+      - name: title
+        label: "Titolo mostra/progetto"
+        type: string
+      - name: year
+        label: "Anno"
+        type: string
+        description: "Es. 2024, oppure ongoing, oppure 2022 / ongoing"
+      - name: subtitle
+        label: "Sottotitolo"
+        type: string
+        required: false
+      - name: venue
+        label: "Luogo / info mostra"
+        type: string
+        required: false
+      - name: curator
+        label: "Curatela"
+        type: string
+        required: false
+      - name: credits
+        label: "Crediti (es. foto di...)"
+        type: string
+        required: false
+      - name: summary
+        label: "Testo di presentazione"
+        type: text
+        required: false
+        description: "Per andare a capo tra un paragrafo e l'altro, lascia una riga vuota."
+      - name: works
+        label: "Opere"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: image
+            label: "Immagine"
+            type: image
+          - name: title
+            label: "Titolo opera"
+            type: string
+            required: false
+          - name: medium
+            label: "Tecnica / dimensioni"
+            type: string
+            required: false
